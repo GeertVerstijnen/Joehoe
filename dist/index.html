@@ -1,35 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="output.css">
-</head>
-<body>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
     <div class="flex justify-normal">
-        <div class="w-1/3 bg-red-300 h-screen">
-            <div class="text-center">
-                <h1 class="text-xl font-bold mt-16">Todays event</h1>
-                <div>These are the events for today</div>
-            </div>
-            <div>
-                <div class="mx-4 bg-yellow-600 flex rounded-xl shadow-lg h-40">
-                    <img class="p-4 rounded-2xl w-40 h-40 object-cover" src="https://api.omroepbrabant.nl/img/f/768/432/0.51/0.33/bWVkaWEvcHJvZC8zMzk0NDgxLmpwZz9zdj0yMDE5LTA3LTA3JnN0PTIwMjAtMDEtMDFUMDAlM0EwMCUzQTAwWiZzZT0yMDQwLTAxLTAxVDAwJTNBMDAlM0EwMFomc3I9YiZzcD1yJnNpZz0zNTNDa1RsdldmM0hRR0l0QzFnbjIlMkJiZGxhTEt4ek1xeGZ3dFg2bDdiQ00lM0Q=">
-                    <div class="flex flex-col text-white justify-between">
-                        <div>
-                            <div class="uppercase font-bold text-lg">ea fc party</div>
-                            <div>Lets recreate the 2022 / 2023 champions league tournament.</div>
-                        </div>
-                        <div class="flex justify-normal pb-2">
-                            <div>11 / 12</div>
-                        </div>
-                    </div>
-                    <img class="p-4 w-40 h-40 object-cover" src="https://images.squarespace-cdn.com/content/v1/5bfae6e2b1059854593140e8/1603794153762-79PQD8C5HHI52YQQ6KGG/CA-qr-ca-sweden-white-800px.png" alt="">
-                </div>
-            </div>
+      <div class="w-1/3 bg-white h-screen">
+        <div class="text-center flex flex-col">
+          <h1
+            class="font-bold mt-16 text-6xl bg-gradient-to-r from-dark-blue to-mid-blue inline-block text-transparent bg-clip-text uppercase"
+          >
+            Todays event
+          </h1>
+          <div
+            class="font-bold bg-gradient-to-r from-blue to-light-blue inline-block text-transparent bg-clip-text text-2xl"
+          >
+            These are the events for today
+          </div>
         </div>
-        <div class="w-2/3 bg-green-400 h-screen"></div>        
+        <div class="mt-8 flex flex-col gap-4">
+          <!-- Card 1 -->
+          <div
+            class="mx-4 bg-dark-blue flex rounded-xl shadow-lg h-36 relative"
+          >
+            <img
+              class="rounded-xl rounded-r-none w-36 h-36 object-cover"
+              src="https://api.omroepbrabant.nl/img/f/768/432/0.51/0.33/bWVkaWEvcHJvZC8zMzk0NDgxLmpwZz9zdj0yMDE5LTA3LTA3JnN0PTIwMjAtMDEtMDFUMDAlM0EwMCUzQTAwWiZzZT0yMDQwLTAxLTAxVDAwJTNBMDAlM0EwMFomc3I9YiZzcD1yJnNpZz0zNTNDa1RsdldmM0hRR0l0QzFnbjIlMkJiZGxhTEt4ek1xeGZ3dFg2bDdiQ00lM0Q="
+            />
+            <div class="flex flex-col text-white justify-between mx-4 my-2">
+              <div class="">
+                <div class="uppercase font-bold text-xl">ea fc party</div>
+                <div>
+                  Lets recreate the 2022 / 2023 champions league tournament.
+                </div>
+              </div>
+              <div class="flex justify-start pb-2 gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 20V18C13 15.2386 10.7614 13 8 13C5.23858 13 3 15.2386 3 18V20H13ZM13 20H21V19C21 16.0545 18.7614 14 16 14C14.5867 14 13.3103 14.6255 12.4009 15.6311M11 7C11 8.65685 9.65685 10 8 10C6.34315 10 5 8.65685 5 7C5 5.34315 6.34315 4 8 4C9.65685 4 11 5.34315 11 7ZM18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9Z"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="font-light italic">11 / 12</div>
+              </div>
+            </div>
+            <div class="">
+              <img
+                class="p-4 w-20 h-20 object-contain absolute bottom-0 right-0"
+                src="https://images.squarespace-cdn.com/content/v1/5bfae6e2b1059854593140e8/1603794153762-79PQD8C5HHI52YQQ6KGG/CA-qr-ca-sweden-white-800px.png"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="mx-4 bg-mid-blue flex rounded-xl shadow-lg h-36 relative">
+            <img
+              class="rounded-xl rounded-r-none w-36 h-36 object-cover"
+              src="https://www.allrecipes.com/thmb/iXKYAl17eIEnvhLtb4WxM7wKqTc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/240376-homemade-pepperoni-pizza-Beauty-3x4-1-6ae54059c23348b3b9a703b6a3067a44.jpg"
+            />
+            <div class="flex flex-col text-white justify-between mx-4 my-2">
+              <div class="">
+                <div class="uppercase font-bold text-xl">pizza party</div>
+                <div>
+                  Come join us at the second floor at room TQ4-1.407 for a pizza party
+                </div>
+              </div>
+              <div class="flex justify-start pb-2 gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 20V18C13 15.2386 10.7614 13 8 13C5.23858 13 3 15.2386 3 18V20H13ZM13 20H21V19C21 16.0545 18.7614 14 16 14C14.5867 14 13.3103 14.6255 12.4009 15.6311M11 7C11 8.65685 9.65685 10 8 10C6.34315 10 5 8.65685 5 7C5 5.34315 6.34315 4 8 4C9.65685 4 11 5.34315 11 7ZM18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9Z"
+                    stroke="#ef4444"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="font-light italic text-red-500">FULL</div>
+              </div>
+            </div>
+            <div class="">
+              <img
+                class="p-4 w-20 h-20 object-contain absolute bottom-0 right-0"
+                src="https://images.squarespace-cdn.com/content/v1/5bfae6e2b1059854593140e8/1603794153762-79PQD8C5HHI52YQQ6KGG/CA-qr-ca-sweden-white-800px.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="mx-4 bg-blue flex rounded-xl shadow-lg h-36 relative">
+            <img
+              class="rounded-xl rounded-r-none w-36 h-36 object-cover"
+              src="https://static.ah.nl/binaries/ah/content/gallery/ah-nl/ah-nl-core/highlights/over-ah/over-ah-home/grid-ah-to-go.jpg/grid-ah-to-go.jpg/ahonline%3AmobileHighlightImage"
+            />
+            <div class="flex flex-col text-white justify-between mx-4 my-2">
+              <div class="">
+                <div class="uppercase font-bold text-xl">trip to albert heijn</div>
+                <div>
+                    Who likes to walk with me to the Albert Heijn to get some lunch?
+                </div>
+              </div>
+              <div class="flex justify-start pb-2 gap-2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 20V18C13 15.2386 10.7614 13 8 13C5.23858 13 3 15.2386 3 18V20H13ZM13 20H21V19C21 16.0545 18.7614 14 16 14C14.5867 14 13.3103 14.6255 12.4009 15.6311M11 7C11 8.65685 9.65685 10 8 10C6.34315 10 5 8.65685 5 7C5 5.34315 6.34315 4 8 4C9.65685 4 11 5.34315 11 7ZM18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9Z"
+                    stroke="#ffffff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="font-light italic">5 / -</div>
+              </div>
+            </div>
+            <div class="">
+              <img
+                class="p-4 w-20 h-20 object-contain absolute bottom-0 right-0"
+                src="https://images.squarespace-cdn.com/content/v1/5bfae6e2b1059854593140e8/1603794153762-79PQD8C5HHI52YQQ6KGG/CA-qr-ca-sweden-white-800px.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-2/3 bg-green-400 h-screen">
+        <img class="h-screen w-full object-cover" src="/src/images/Campaign.2 1280x1080.png" alt="">
+      </div>
     </div>
-</body>
+  </body>
 </html>
