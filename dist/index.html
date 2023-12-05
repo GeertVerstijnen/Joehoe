@@ -155,34 +155,48 @@
 
        
 
-      <div class="w-2/3 mx-auto ">
-        <div class="carousel flex w-full overflow transition ease-in-out delay-150" id="carousel">
-            <img class="w-full h-auto" src="/src/images/Power-up.png" alt="...">
-            <img class="w-full h-auto" src="/src/images/Pizza.png" alt="...">
-            <img class="w-full h-auto" src="/src/images/Recharge.png" alt="...">
+      <div class="w-2/3 mx-auto overflow-hidden relative">
+        <div class="carousel flex w-full transition ease-in-out" id="carousel">
+          <img class="w-full h-auto" src="/src/images/Power-up.png" alt="...">
+          <img class="w-full h-auto" src="/src/images/Pizza.png" alt="...">
+          <img class="w-full h-auto" src="/src/images/Recharge.png" alt="...">
         </div>
-    </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.getElementById("carousel");
-      const images = document.querySelectorAll("#carousel img");
-      const interval = 3000;
-      let currentIndex = 0;
-
-      function showNextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-      }
-
-      function updateCarousel() {
-        const transformValue = -currentIndex * 100 + "%";
-        carousel.style.transform = "translateX(" + transformValue + ")";
-      }
-
-      setInterval(showNextImage, interval);
-    });
-  </script>
+        <div class="absolute bottom-0 w-full">
+          <div id="progressBar" class="h-2 transition-transform origin-left transform bg-mid-blue"></div>
+        </div>
+      </div>
+      
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const carousel = document.getElementById("carousel");
+          const progressBar = document.getElementById("progressBar");
+          const images = document.querySelectorAll("#carousel img");
+          const interval = 5000;
+          const animationDuration = 5000; // Duur van de animatie in milliseconden
+          let currentIndex = 0;
+      
+          function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateCarousel();
+            resetProgressBar();
+          }
+      
+          function updateCarousel() {
+            const transformValue = -currentIndex * 100 + "%";
+            carousel.style.transform = "translateX(" + transformValue + ")";
+          }
+      
+          function resetProgressBar() {
+            progressBar.style.transition = "none";
+            progressBar.style.transform = "scaleX(1)"; // Reset naar volle breedte
+            void progressBar.offsetWidth; // Force reflow
+            progressBar.style.transition = `transform ${animationDuration}ms linear`;
+            progressBar.style.transform = "scaleX(0)"; // Schaal naar nul breedte (links naar rechts)
+          }
+      
+          setInterval(showNextImage, interval);
+        });
+      </script>
     </div>
   </body>
 </html>
