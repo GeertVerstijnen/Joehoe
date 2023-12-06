@@ -1,10 +1,37 @@
-// script.js
+ // Importeer Firestore-functionaliteit
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDPCVnXdj3AdJoFxkIhNKyb767YppkfepA",
+    authDomain: "joehoe-c355d.firebaseapp.com",
+    projectId: "joehoe-c355d",
+    storageBucket: "joehoe-c355d.appspot.com",
+    messagingSenderId: "556689009363",
+    appId: "1:556689009363:web:c0f30323c888c3f92b8226",
+    measurementId: "G-DVE45FR3GW"
+};
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+ 
+const getUsers = async () => {
+  const usersCollection = collection(db, 'users');
+  const querySnapshot = await getDocs(usersCollection);
+
+  querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+  });
+};
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.getElementById("carousel");
     const progressBar = document.getElementById("progressBar");
     const images = document.querySelectorAll("#carousel img");
     const interval = 5000;
-    const animationDuration = 5000; // Duur van de animatie in milliseconden
     let currentIndex = 0;
   
     function showNextImage() {
@@ -22,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       progressBar.style.transition = "none";
       progressBar.style.transform = "scaleX(1)"; // Reset naar volle breedte
       void progressBar.offsetWidth; // Force reflow
-      progressBar.style.transition = `transform ${animationDuration}ms linear`;
+      progressBar.style.transition = `transform ${interval}ms linear`;
       progressBar.style.transform = "scaleX(0)"; // Schaal naar nul breedte (links naar rechts)
     }
   
