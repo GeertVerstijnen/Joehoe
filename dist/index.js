@@ -1,8 +1,9 @@
- // Importeer Firestore-functionaliteit
+// Importeer Firestore-functionaliteit
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+// Configuratie voor je Firebase-project
 const firebaseConfig = {
     apiKey: "AIzaSyDPCVnXdj3AdJoFxkIhNKyb767YppkfepA",
     authDomain: "joehoe-c355d.firebaseapp.com",
@@ -16,15 +17,17 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
- 
-const getUsers = async () => {
-  const usersCollection = collection(db, 'users');
-  const querySnapshot = await getDocs(usersCollection);
+// Functie om gegevens uit de "cards"-collectie op te halen
+const getCardsData = async () => {
+    const cardsCollection = collection(db, 'cards');
+    const querySnapshot = await getDocs(cardsCollection);
 
-  querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-  });
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+    });
 };
+
+getCardsData();
 
 
 document.addEventListener("DOMContentLoaded", function () {
