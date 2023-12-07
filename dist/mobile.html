@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="output.css" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="flex justify-between flex-col">
-      <div class="">
-          <h1 class="font-bold mt-8 mx-4 text-4xl bg-gradient-to-r from-dark-blue to-mid-blue inline-block text-transparent bg-clip-text uppercase text-center justify-center">
-            Event #1
-          </h1>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-      <div class="mx-4 mt-6">
-        <h2 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-          Your name
-        </h2>
-        <p class="text-gray-900 text-sm pb-8 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis impedit iusto voluptatem nisi asperiores provident est similique ullam saepe corporis!
-        </p>
-      </div>
-                 
-      <button type="submit" class="text-white bg-mid-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-mid-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">Exit</button>
-                
+    .content {
+      flex: 1;
+    }
 
-      <div class="flex justify-center mb-8 absolute bottom-0 w-full" >
-          <img class="w-32 text-center" src="/src/images/Logo (1).png" alt="" />
-      </div>
+    .sticky-button {
+      position: sticky;
+      bottom: 12%;
+      width: calc(100% - 2rem); /* Voeg marges van 1rem aan beide zijden toe */
+      margin: 0 1rem; /* Margin toegevoegd aan beide zijden van de knop */
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="font-bold mt-8 mx-4 text-4xl bg-gradient-to-r from-dark-blue to-mid-blue inline-block text-transparent bg-clip-text uppercase justify-center">
+      <h1>
+        Event #1
+      </h1>
+    </div>
+
+    <div class="mx-4 mt-6">
+      <h2 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        Description
+      </h2>
+      <p class="text-gray-900 text-sm pb-8 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis impedit iusto voluptatem nisi asperiores provident est similique ullam saepe corporis!
+      </p>
+    </div>
   </div>
-  </body>
+
+  <button type="submit" class="sticky-button text-white bg-mid-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-mid-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    Exit
+  </button>
+
+  <div class="flex justify-center mb-8 w-full">
+    <img class="w-32 text-center" src="/src/images/Logo (1).png" alt="" />
+  </div>
+</body>
 </html>
