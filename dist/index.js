@@ -22,31 +22,33 @@ const db = getFirestore(app);
 
 // Functie om kaarten dynamisch te genereren op basis van gegevens uit de database
 const generateCards = async () => {
-  const cardsContainer = document.getElementById("cardsContainer");
+  // Wachten tot de DOM volledig is geladen
+  document.addEventListener("DOMContentLoaded", async function () {
+    const cardsContainer = document.getElementById("cardsContainer");
 
-  // Haal gegevens op uit de "cards"-collectie
-  const cardsCollection = collection(db, "cards");
-  const querySnapshot = await getDocs(cardsCollection);
+    // Haal gegevens op uit de "cards"-collectie
+    const cardsCollection = collection(db, "cards");
+    const querySnapshot = await getDocs(cardsCollection);
 
-  // Beperk het aantal kaarten tot maximaal 4
-  let cardCount = 0;
+    // Beperk het aantal kaarten tot maximaal 4
+    let cardCount = 0;
 
-  // Loop door de gegevens en maak voor elke kaart een nieuw element
-  querySnapshot.forEach((doc) => {
-    if (cardCount < 4) {
-      const newCard = document.createElement("div");
-      newCard.classList.add(
-        "mx-4",
-        "bg-dark-blue",
-        "flex",
-        "rounded-xl",
-        "shadow-lg",
-        "h-32",
-        "relative",
-        "card-container"
-      );
+    // Loop door de gegevens en maak voor elke kaart een nieuw element
+    querySnapshot.forEach((doc) => {
+      if (cardCount < 4) {
+        const newCard = document.createElement("div");
+        newCard.classList.add(
+          "mx-4",
+          "bg-dark-blue",
+          "flex",
+          "rounded-xl",
+          "shadow-lg",
+          "h-32",
+          "relative",
+          "card-container"
+        );
 
-      newCard.innerHTML = `
+        newCard.innerHTML = `
         <img class="rounded-xl rounded-r-none w-32 h-full object-cover" src="${doc.data().imageUrl}" />
         <div class="flex flex-col text-white justify-between mx-4 my-2">
           <div>
@@ -89,6 +91,7 @@ const generateCards = async () => {
       return;
     }
   });
+});
 };
 
 // Roep de generateCards-functie aan om de kaarten dynamisch te genereren
@@ -122,3 +125,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(showNextImage, interval);
 });
+
+function saveName() {
+  var name = document.getElementById('name').value;
+  localStorage.setItem('savedName', name);
+}
+
+function displaySavedName() {
+  var savedName = localStorage.getItem('savedName');
+  if (savedName) {
+      document.getElementById('displaySavedName').innerText = savedName;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  displaySavedName();
+});
+
+window.onload = displaySavedName;
