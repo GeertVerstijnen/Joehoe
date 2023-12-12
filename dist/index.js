@@ -126,15 +126,17 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextImage, interval);
 });
 
+let savedName = localStorage.getItem('savedName') || '';
+
 function saveName() {
-  var name = document.getElementById('name').value;
-  localStorage.setItem('savedName', name);
+  savedName = document.getElementById('name').value;
+  localStorage.setItem('savedName', savedName);
+  window.location.href = 'mobile.html';
 }
 
-function displaySavedName() {
-  var savedName = localStorage.getItem('savedName');
+function displaySavedName() {  
   if (savedName) {
-      document.getElementById('displaySavedName').innerText = savedName;
+    document.getElementById('displaySavedName').innerText = savedName;
   }
 }
 
@@ -142,4 +144,14 @@ document.addEventListener("DOMContentLoaded", function() {
   displaySavedName();
 });
 
-window.onload = displaySavedName;
+window.onload = function() {
+  displaySavedName();
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Voorkom het standaardgedrag van het formulier
+    saveName();
+  });
+});
