@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css" />
     <title>Login</title>
+    <!-- <script src="index.js" type="text/javascript"></script> -->
+    <script src="updateCounter.js" type="module"></script>
 </head>
 <body>
     <div class="flex justify-between flex-col">
@@ -30,17 +32,28 @@
                     </div>
                 </div>
                 <div class="">
-                    <button onclick="updateCounter" type="submit" class="sticky-button text-white bg-mid-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-mid-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button id="yourButtonId" onclick="updateCounter()" type="submit" class="sticky-button text-white bg-mid-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-mid-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Submit
                     </button>
                 </div>
             </form>
         </div>
+        <script>
+            // function updateCounter() {
+            //     console.log("function triggered");
+            //     let currentCounter = parseInt(localStorage.getItem('counter')) || 0;
+            //     currentCounter++;
+            //     localStorage.setItem('counter', currentCounter);
+            //     console.log('Counter:', currentCounter);
+            // }
             
+            // // Add an event listener to the button
+            // document.getElementById('yourButtonId').addEventListener('click', updateCounter);
+            </script>
+
         <div class="flex justify-center mb-8 absolute bottom-0 w-full" >
             <img class="w-32 text-center" src="../src/images/Logo (1).png" alt="" />
         </div>
     </div>
-    <script src="index.js" type="module"></script>
 </body>
 </html>

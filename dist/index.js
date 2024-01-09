@@ -80,7 +80,7 @@ const generateCards = async () => {
             </div>
         </div>
         <div>
-          <a href="/dist/login.html">
+          <a href="/dist/mobile.html">
             <img class="p-4 w-20 h-20 object-cover absolute bottom-0 right-0" src="${doc.data().imageQR}" alt="" />
           </a>
         </div>
@@ -153,20 +153,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-updateCounter.addEventListener(() =>{
-const currentProgress = data().progress;
-const newProgress = currentProgress + 1;
-const progressRef = database.ref('qi51WGjVEzS6ZuS8dKFV/progress');
-
-currentProgress.set(newProgress);
-
-progressRef.set(newProgress)
-  .then(() => {
-    console.log('Progress successfully updated!');
-  })
-  .catch((error) => {
-    console.error('Error updating progress:', error);
-  });
 
 
-});
