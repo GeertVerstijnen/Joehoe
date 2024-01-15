@@ -6,27 +6,6 @@
   <title>Document</title>
   <link rel="stylesheet" href="output.css" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .content {
-      flex: 1;
-    }
-
-    .sticky-button {
-      position: sticky;
-      bottom: 12%;
-      width: calc(100% - 2rem); /* Voeg marges van 1rem aan beide zijden toe */
-      margin: 0 1rem; /* Margin toegevoegd aan beide zijden van de knop */
-      z-index: 1;
-    }
-  </style>
 </head>
 <body>
   <div class="content">
@@ -49,13 +28,15 @@
       </p>
     </div>
   </div>
-  <a href="https://forms.gle/ibEs7FbcS1yxdGo5A">
-    <button id="unoJoin" type="submit" class="sticky-button text-white bg-mid-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-mid-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-      Join
-    </button>
-  </a>
-  <div class="flex justify-center mb-8 mt-6 w-full">
-    <img class="w-32 text-center" src="../src/images/Logo (1).png" alt="" />
+  <div class="bottom-0 absolute w-screen flex justify-center flex-col">
+    <button class="px-16 mx-4 bg-gradient-to-r bg-mid-blue hover:bg-dark-blue text-white font-bold py-2 px-4 rounded">
+        <a href="https://forms.gle/ibEs7FbcS1yxdGo5A" class="w-full">
+        Join
+      </a>
+      </button>
+    <div class="flex justify-center mb-8 mt-6 w-full">
+      <img class="w-32 text-center" src="../src/images/Logo (1).png" alt="" />
+    </div>
   </div>
 </body>
 <script src="index.js" type="module"></script>
