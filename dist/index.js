@@ -80,7 +80,7 @@ const generateCards = async () => {
             </div>
         </div>
         <div>
-          <a href="/dist/mobile.html">
+          <a href="/joehoe/dist/mobile.html">
             <img class="p-4 w-20 h-20 object-cover absolute bottom-0 right-0" src="${doc.data().imageQR}" alt="" />
           </a>
         </div>
